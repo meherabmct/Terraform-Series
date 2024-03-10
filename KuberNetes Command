@@ -1,0 +1,141 @@
+clear
+    2  curl -LO https://lnkd.in/dQvp5rz3 -s https://lnkd.in/d9kd7ByQ
+    3  clear
+    4  sudo apt update
+    5  sudo apt install -y curl wget apt-transport-https
+    6  sudo apt install -y docker.io
+    7  sudo systemctl enable --now docker
+    8  clear
+    9  docker ps
+   10  sudo chown $USER /var/run/docker.sock
+   11  docker ps
+   12  curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+   13  chmod +x minikube
+   14  sudo mv minikube /usr/local/bin/
+   15  minikube
+   16  clear
+   17  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+   18  chmod +x kubectl
+   19  sudo mv kubectl /usr/local/bin/
+   20  clear
+   21  kubectl --version
+   22  kubectl -version
+   23  kubectl -v
+   24  kubectl --v
+   25  kubectl
+   26  clera
+   27  kubect version
+   28  kubectl version
+   29  clear
+   30  minikube
+   31  kubectl
+   32  clear
+   33  minikube start
+   34  clear
+   35  kubectl get nodes
+   36  docker ps
+   37  docker exec -it 79338ebf462f bash
+   38  clear
+   39  kubectl run my-nginx --image=nginx:latest
+   40  kubectl get pods
+   41  docker exec -it 79338ebf462f bash
+   42  docker ps
+   43  clear
+   44  mkdir projects
+   45  cd projects/
+   46  clear
+   47  ls
+   48  kubectl get namespace
+   49  kubectl get pods
+   50  kubectl get pods -ns kube-system
+   51  kubectl get pods -n kube-system
+   52  clear
+   53  kubectl get pods -n kube-public
+   54  kubectl get pods -n kube-node-lease
+   55  kubectl get ns
+   56  kubectl create namespace node-app
+   57  kubectl get ns
+   58  kubectl get pods -n node-app
+   59  clear
+   60  vim pod.yml
+   61  ls
+   62  kubectl apply -f pod.yml
+   63  kubectl get pods
+   64  kubectl get pods -n node-app
+   65  clear
+   66  ls
+   67  cat pod.yml
+   68  clear
+   69  kubectl get pods
+   70  kubectl get pods -n default
+   71  kubectl get pods
+   72  kubectl get pods -n node-app
+   73  minikube ssh
+   74  clear
+   75  ls
+   76  vim replica-set.yml
+   77  vim replica-set.yml
+   78  kubectl apply -f replica-set.yml
+   79  kubectl get pods
+   80  kubectl get pods -n node-app
+   81  vim replica-set.yml
+   82  kubectl apply -f replica-set.yml
+   83  kubectl get pods -n node-app
+   84  kubectl delete -f replica-set.yml
+   85  kubectl get pods -n node-app
+   86  clear
+   87  vim deployment.yml
+   88  cat pod.yml
+   89  vim deployment.yml
+   90  cat deployment.yml
+   91  clear
+   92  kubectl apply -f deployment.yml --dry-run
+   93  kubectl apply -f deployment.yml --dry-run=client
+   94  clear
+   95  kubectl apply -f deployment.yml
+   96  kubectl get deployments
+   97  kubectl get deployments -n node-app
+   98  kubectl get pods -n node-app
+   99  kubectl delete pod node-app-deployment-7977694c59-b4mpb -n node-app
+  100  kubectl get pods -n node-app
+  101  kubectl scale deployment node-app-deployment --replicas=6 -n node-app
+  102  kubectl get pods -n node-app
+  103  kubectl scale deployment node-app-deployment --replicas=1 -n node-app
+  104  kubectl get pods -n node-app
+  105  clera
+  106  clear
+  107  kubectl rollout status deployment/node-app-deployment -n node-app
+  108  kubectl scale deployment node-app-deployment --replicas=5 -n node-app
+  109  kubectl rollout status deployment/node-app-deployment -n node-app
+  110  vim deployment.yml
+  111  kubectl apply -f deployment.yml
+  112  kubectl describe deployment node-app-deployment -n node-app
+  113  clear
+  114  vim deployment.yml
+  115  ls
+  116  vim service.yml
+  117  cat deployment.yml
+  118  vim service.yml
+  119  kubectl apply -f service.yml
+  120  clear
+  121  kubectl get svc -n node-app
+  122  curl localhost:30003
+  123  minikube service node-app-service --url
+  124  clear
+  125  minikube service node-app-service -n node-app --url
+  126  curl http://192.168.49.2:30003
+  127  curl http://192.168.49.2:30003/todo
+  128  clear
+  129  kubectl get pods -n node-app
+  130  kubectl delete node-app-deployment-86797f5d88-lfj6l -n node-app
+  131  kubectl delete pod node-app-deployment-86797f5d88-lfj6l -n node-app
+
+  132  curl http://192.168.49.2:30003/todo
+  133  clear
+  134  curl http://192.168.49.2:30003/todo
+  135  clear
+  136  kubectl get pods -n node-app
+  137  kubect delete pod node-app-deployment-86797f5d88-mvpzd -n node-app
+  138  kubectl delete pod node-app-deployment-86797f5d88-mvpzd -n node-app
+  139  cat deployment.yml
+  140  history
